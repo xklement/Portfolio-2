@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Epitech",
+    "logo": "../../img/logo_epitech.webp",
+    "date": "2018-2023",
+    "titre": "Expert en technologies de l'information"
+  },
+  {
+    "name": "Beijing Jiaotong University",
+    "logo": "../../img/logo_beijing_jiaotong.png",
+    "date": "2022",
+    "poste": "Electronics & Information "
+  }
+]

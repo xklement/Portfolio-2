@@ -32,7 +32,6 @@ function waitForMs(ms) {
 async function carousel(carouselList, eleRef) {
   var i = 0;
   while (true) {
-    console.log("here");
     updateFontColor(eleRef, carouselList[i].color);
     await typeSentence(carouselList[i].text, eleRef);
     await waitForMs(1500);

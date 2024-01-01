@@ -12,7 +12,9 @@
       rel="stylesheet"
     />
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
+    <script src="/js/workExperiences.js" type="module"></script>
+    <script src="/js/loadContent.js" type="module"></script>
   </head>
   <body>
     <header class="header">
@@ -20,8 +22,9 @@
 
       <nav class="navbar">
         <a href="#">Home</a>
-        <a href="#">Skill</a>
         <a href="#">Experience</a>
+        <a href="#">Skill</a>
+        <a href="#about">About</a>
         <a href="#">Contact</a>
       </nav>
     </header>
@@ -29,7 +32,7 @@
     <section class="home">
       <div class="home-content">
         <h3>Hello, I am</h3>
-        <h3>Clement Xu</h3>
+        <h1>Clement Xu</h1>
         <h3>
           And I'm a
           <span id="sentence" class="sentence"></span>
@@ -44,6 +47,41 @@
           <a href="#"><i class="bx bxl-github"></i></a>
           <a href="#"><i class="bx bxl-linkedin-square"></i></a>
         </div>
+        <a href="#about" class="btn-box">More About Me</a>
+      </div>
+      <div class="home-photo">
+        <img class="photo" src="./img/photo.webp" alt="Photo" />
+      </div>
+    </section>
+
+    <section class="experiences">
+      <div class="expriences-content">
+        <h2>Experiences</h2>
+        <div class="timeline" id="timeline-container">
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about_img">
+        <img src="./img/photo_2.jpg" alt="photo" />
+      </div>
+      <div class="about-content">
+        <h2>About Me</h2>
+        <h4>Junior Developer</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+          tincidunt felis eget tortor porta, in lacinia urna rutrum. Donec
+          fermentum at eros at varius. Nam commodo eu dui ut consectetur.
+          Pellentesque quis leo eget nibh malesuada cursus quis nec turpis.
+          Quisque finibus vestibulum placerat. Cras porttitor porttitor urna
+          maximus finibus. Nulla posuere efficitur feugiat. Vestibulum nec
+          pharetra nisl. Morbi in felis quam. Donec non imperdiet odio. Maecenas
+          volutpat vestibulum lorem vel laoreet. Vestibulum ante ipsum primis in
+          faucibus orci luctus et ultrices posuere cubilia curae; Donec porta
+          leo at pellentesque elementum. Proin in sapien sit amet mi lobortis
+          ornare sed vitae nunc.
+        </p>
       </div>
     </section>
   </body>
