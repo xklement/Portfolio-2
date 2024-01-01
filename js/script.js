@@ -6,22 +6,24 @@ const carouselText = [
 async function typeSentence(sentence, eleRef, delay = 100) {
   const letters = sentence.split("");
   let i = 0;
+  const element = document.querySelector(eleRef);
   while (i < letters.length) {
     await waitForMs(delay);
-    $(eleRef).append(letters[i]);
+    element.innerHTML += letters[i];
     i++;
   }
   return;
 }
 
 async function deleteSentence(eleRef) {
-  const sentence = $(eleRef).html();
+  const element = document.querySelector(eleRef);
+  const sentence = element.innerHTML;
   const letters = sentence.split("");
   let i = 0;
   while (letters.length > 0) {
     await waitForMs(100);
     letters.pop();
-    $(eleRef).html(letters.join(""));
+    element.innerHTML = letters.join("");
   }
 }
 
@@ -31,8 +33,9 @@ function waitForMs(ms) {
 
 async function carousel(carouselList, eleRef) {
   var i = 0;
+  const element = document.querySelector(eleRef);
   while (true) {
-    updateFontColor(eleRef, carouselList[i].color);
+    updateFontColor(element, carouselList[i].color);
     await typeSentence(carouselList[i].text, eleRef);
     await waitForMs(1500);
     await deleteSentence(eleRef);
@@ -44,10 +47,8 @@ async function carousel(carouselList, eleRef) {
   }
 }
 
-function updateFontColor(eleRef, color) {
-  $(eleRef).css("color", color);
+function updateFontColor(element, color) {
+  element.style.color = color;
 }
 
 carousel(carouselText, "#sentence");
-
-

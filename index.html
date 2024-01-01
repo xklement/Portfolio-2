@@ -11,21 +11,19 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="/js/script.js"></script>
-    <script src="/js/workExperiences.js" type="module"></script>
-    <script src="/js/loadContent.js" type="module"></script>
   </head>
   <body>
     <header class="header">
       <a href="#" class="logo">Portfolio</a>
 
+      <label class="mobile-icon" for="toggle">☰</label>
+      <input type="checkbox" id="toggle" />
       <nav class="navbar">
         <a href="#">Home</a>
-        <a href="#">Experience</a>
-        <a href="#">Skill</a>
+        <a href="#experiences">Experience</a>
+        <a href="#experiences">Skill</a>
         <a href="#about">About</a>
-        <a href="#">Contact</a>
+        <a href="#about">Contact</a>
       </nav>
     </header>
 
@@ -44,8 +42,12 @@
           Aenean euismod vulputate ligula<br />
         </p>
         <div class="home-sci">
-          <a href="#"><i class="bx bxl-github"></i></a>
-          <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+          <a href="https://github.com/xklement"
+            ><i class="bx bxl-github"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/cl%C3%A9ment-xu-3267b0177/"
+            ><i class="bx bxl-linkedin-square"></i
+          ></a>
         </div>
         <a href="#about" class="btn-box">More About Me</a>
       </div>
@@ -54,11 +56,10 @@
       </div>
     </section>
 
-    <section class="experiences">
+    <section class="experiences" id="experiences">
       <div class="expriences-content">
         <h2>Experiences</h2>
-        <div class="timeline" id="timeline-container">
-        </div>
+        <div class="timeline" id="timeline-container"></div>
       </div>
     </section>
 
@@ -85,4 +86,7 @@
       </div>
     </section>
   </body>
+  <script type="text/javascript" src="/js/script.js"></script>
+  <script src="/js/workExperiences.js" type="module"></script>
+  <script src="/js/loadContent.js" type="module"></script>
 </html>
