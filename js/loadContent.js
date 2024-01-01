@@ -41,21 +41,51 @@ const experiences = [
 
 const timelineContainer = document.getElementById("timeline-container");
 
+function createCardHTML(experience) {
+  return `
+    <div class="card-header">
+      <h2>${experience.name}</h2>
+      <img class="card-logo" src="${experience.logo}" alt="${experience.name} logo" />
+    </div>
+    <p>${experience.description}</p>
+  `;
+}
+
+function applyCardAnimation(element, animationName) {
+  element.style.animation = `${animationName} 1s ease forwards`;
+}
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      const target = entry.target;
+      const isLeft = target.classList.contains("left");
+
+      if (entry.isIntersecting) {
+        applyCardAnimation(
+          target.firstChild,
+          isLeft ? "fadeLeftIn" : "fadeRightIn"
+        );
+      } else {
+        applyCardAnimation(
+          target.firstChild,
+          isLeft ? "fadeRightOut" : "fadeLeftOut"
+        );
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
+
 experiences.forEach((experience, index) => {
   const container = document.createElement("div");
-  container.className = "container " + (index % 2 === 0 ? "left" : "right");
+  container.className = `container ${index % 2 === 0 ? "left" : "right"}`;
 
   const cardContent = document.createElement("div");
   cardContent.className = "card-content";
-
-  cardContent.innerHTML = `
-        <div class="card-header">
-          <h2>${experience.name}</h2>
-          <img class="card-logo" src="${experience.logo}" alt="${experience.name} logo" />
-        </div>
-        <p>${experience.description}</p>
-      `;
+  cardContent.innerHTML = createCardHTML(experience);
 
   container.appendChild(cardContent);
+  observer.observe(container);
   timelineContainer.appendChild(container);
 });

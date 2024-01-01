@@ -297,20 +297,9 @@ h2 {
   left: 0;
 }
 
-.left .card-content {
-  animation: fadeLeftIn linear forwards, fadeRightOut linear forwards;
-  animation-timeline: view();
-  animation-range: entry, exit;
-}
 
 .right {
   left: 50%;
-}
-
-.right .card-content {
-  animation: fadeRightIn linear forwards, fadeLeftOut linear forwards;
-  animation-timeline: view();
-  animation-range: entry, exit;
 }
 
 .right::after {
