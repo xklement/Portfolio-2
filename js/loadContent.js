@@ -3,51 +3,53 @@
 const experiences = [
   {
     name: "PM-SA",
-    logo: "../../img/logo_pmsa_g.png",
+    logo: "../../img/logos/logo_pmsa_g.png",
     date: "2018",
-    poste: "Developpeur Web",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />In urna neque, molestie vulputate consectetur venenatis, maximus vitae ex. Aenean euismod vulputate ligula",
-    tech: ["test"],
+    position: "Web Developer",
+    description: "Development and maintenance of web applications, business enabling to facilitate communication and monitoring of different teams.",
+    tech: ["Php", "Js", "JQuery", "MySql"],
   },
   {
     name: "PM-SA",
-    logo: "../../img/logo_pmsa_g.png",
+    logo: "../../img/logos/logo_pmsa_g.png",
     date: "2021",
-    poste: "Developpeur Web",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />In urna neque, molestie vulputate consectetur venenatis, maximus vitae ex. Aenean euismod vulputate ligula",
-    tech: ["test"],
+    position: "Web Developer",
+    description: "Development and maintenance of web applications, business enabling to facilitate communication and monitoring of different teams.",
+    tech: ["Php", "Js", "JQuery", "MySql"],
   },
   {
     name: "Memosya",
-    logo: "../../img/logo_memosya.png",
+    logo: "../../img/logos/logo_memosya.png",
     date: "2023",
-    poste: "Developpeur Web",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />In urna neque, molestie vulputate consectetur venenatis, maximus vitae ex. Aenean euismod vulputate ligula",
-    tech: ["test"],
+    position: "Web Developer",
+    description: "Development of the Memosya application. Memosya is a mobile application and a website incorporating techniques developed in neuroeducation to learn more information more quickly and for longer periods of time.",
+    tech: ["React", "Ruby on Rails", "PostgreSQL"],
   },
   {
     name: "Acensi",
-    logo: "../../img/logo_acensi.png",
+    logo: "../../img/logos/logo_acensi.png",
     date: "Currently",
-    poste: "Developpeur Web",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />In urna neque, molestie vulputate consectetur venenatis, maximus vitae ex. Aenean euismod vulputate ligula",
-    tech: ["test"],
+    position: "Web Developer",
+    description: "Development and maintenance of web applications within the DSI.",
+    tech: ["React", "NodeJS", "Electron", ".NET", "PostgreSQL"],
   },
 ];
+
 
 const timelineContainer = document.getElementById("timeline-container");
 
 function createCardHTML(experience) {
+  const techBadges = experience.tech.map(tech => `<span class="badge">${tech}</span>`).join('');
+
   return `
     <div class="card-header">
       <h2>${experience.name}</h2>
       <img class="card-logo" src="${experience.logo}" alt="${experience.name} logo" />
     </div>
     <p>${experience.description}</p>
+    <div class="tech-badges">
+      ${techBadges}
+    </div>
   `;
 }
 

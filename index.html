@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="description" content="Author: Clement XU, Portfolio" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Portfolio</title>
@@ -20,10 +21,9 @@
       <input type="checkbox" id="toggle" />
       <nav class="navbar">
         <a href="#">Home</a>
-        <a href="#experiences">Experience</a>
-        <a href="#experiences">Skill</a>
+        <a href="#experiences">Experiences</a>
+        <a href="#projects">Projects</a>
         <a href="#about">About</a>
-        <a href="#about">Contact</a>
       </nav>
     </header>
 
@@ -37,19 +37,27 @@
           <span class="input-cursor"></span>
         </h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />In urna
-          neque, molestie vulputate consectetur venenatis, maximus vitae ex.
-          Aenean euismod vulputate ligula<br />
+          As a recent graduate fresh out of Epitech in 2023, I've had the
+          opportunity to work in various companies, allowing me to gain valuable
+          experience. Passionate about fullstack development, I'm constantly
+          seeking innovative solutions to tackle technological challenges. My
+          journey has also enabled me to develop expertise in project management
+          and a solid understanding of client needs. I'm motivated by the desire
+          to contribute to ambitious projects and to continue learning and
+          evolving in this constantly changing field.<br />
         </p>
         <div class="home-sci">
-          <a href="https://github.com/xklement"
+          <a aria-label="Github" href="https://github.com/xklement"
             ><i class="bx bxl-github"></i
           ></a>
-          <a href="https://www.linkedin.com/in/cl%C3%A9ment-xu-3267b0177/"
+          <a aria-label="Linkedin" href="https://www.linkedin.com/in/cl%C3%A9ment-xu-3267b0177/"
             ><i class="bx bxl-linkedin-square"></i
           ></a>
+          <a aria-label="Mail" href="mailto:clement.xu@epitech.eu"
+            ><i class="bx bx-envelope"></i
+          ></a>
         </div>
-        <a href="#about" class="btn-box">More About Me</a>
+        <a aria-label="Read more" href="#about" class="btn-box">More About Me</a>
       </div>
       <div class="home-photo">
         <img class="photo" src="./img/photo.webp" alt="Photo" />
@@ -63,6 +71,16 @@
       </div>
     </section>
 
+    <section class="projects" id="projects">
+      <div class="projects-content">
+        <h2>Projects</h2>
+        <div class="carousel-container">
+          <div id="carousel" class="carousel"></div>
+          <div class="dots-container"></div>
+        </div>
+      </div>
+    </section>
+
     <section class="about" id="about">
       <div class="about_img">
         <img src="./img/photo_2.jpg" alt="photo" />
@@ -71,22 +89,39 @@
         <h2>About Me</h2>
         <h4>Junior Developer</h4>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-          tincidunt felis eget tortor porta, in lacinia urna rutrum. Donec
-          fermentum at eros at varius. Nam commodo eu dui ut consectetur.
-          Pellentesque quis leo eget nibh malesuada cursus quis nec turpis.
-          Quisque finibus vestibulum placerat. Cras porttitor porttitor urna
-          maximus finibus. Nulla posuere efficitur feugiat. Vestibulum nec
-          pharetra nisl. Morbi in felis quam. Donec non imperdiet odio. Maecenas
-          volutpat vestibulum lorem vel laoreet. Vestibulum ante ipsum primis in
-          faucibus orci luctus et ultrices posuere cubilia curae; Donec porta
-          leo at pellentesque elementum. Proin in sapien sit amet mi lobortis
-          ornare sed vitae nunc.
+          In my journey as a developer, I find inspiration not only in the lines
+          of code I write but also in the experiences I gather beyond the
+          screen. With a passion for exploration, I immerse myself in the world
+          of travel, seeking new cultures, landscapes, and adventures. As an
+          avid coder, I thrive on the thrill of problem-solving and the endless
+          possibilities that technology offers. Beyond the realm of development,
+          I find joy in the intricacies of gaming, both as a creator crafting my
+          own digital worlds and as a player immersing myself in captivating
+          narratives. Off the digital grid, you'll often find me on the
+          basketball court, scaling new heights in climbing, or honing my skills
+          in MMA. Through my diverse interests, I cultivate resilience,
+          adaptability, and a relentless pursuit of excellence—qualities that
+          seamlessly translate into my approach to software development, where
+          innovation and creativity converge to shape impactful solutions.
         </p>
       </div>
     </section>
+
+    <footer>
+      <div class="footer-icons">
+        <a aria-label="Github" href="https://github.com/xklement"><i class="bx bxl-github"></i></a>
+        <a aria-label="Linkedin" href="https://www.linkedin.com/in/cl%C3%A9ment-xu-3267b0177/"
+          ><i class="bx bxl-linkedin-square"></i
+        ></a>
+        <a aria-label="Read more" href="mailto:clement.xu@epitech.eu"
+          ><i class="bx bx-envelope"></i
+        ></a>
+      </div>
+      <p class="footer-text">© Clement XU - 2024</p>
+    </footer>
   </body>
   <script type="text/javascript" src="/js/script.js"></script>
   <script src="/js/workExperiences.js" type="module"></script>
   <script src="/js/loadContent.js" type="module"></script>
+  <script src="/js/carousel.js" type="module"></script>
 </html>

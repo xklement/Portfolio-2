@@ -30,7 +30,7 @@ h2 {
   left: 0;
   width: 100%;
   padding: 20px 10%;
-  background: transparent;
+  background: #03131c;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -76,7 +76,7 @@ h2 {
 .home {
   position: relative;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-evenly;
   height: 100vh;
   background-color: #081c29;
   background-size: cover;
@@ -87,6 +87,7 @@ h2 {
 
 .home-content {
   max-width: 600px;
+  min-width: 400px;
 }
 
 .home-content h3 {
@@ -220,7 +221,7 @@ h2 {
 /* Timeline */
 
 .experiences {
-  padding-bottom: 20%;
+  padding-bottom: 10%;
 }
 
 .expriences-content h2 {
@@ -247,12 +248,21 @@ h2 {
 
 .card-content:hover {
   transform: scale(1.2);
-  /* background-color: #fff; */
 }
 
 .card-content p {
   letter-spacing: 1px;
   margin-top: 10px;
+}
+
+.badge {
+  display: inline-block;
+  color: #0ef;
+  padding: 5px 10px;
+  font-family: Arial;
+  border-radius: 25px;
+  margin-top: 8px;
+  border: 1px solid rgba(33, 150, 243, 0.8); /* Border color same as background color */
 }
 
 .timeline {
@@ -296,7 +306,6 @@ h2 {
 .left {
   left: 0;
 }
-
 
 .right {
   left: 50%;
@@ -376,19 +385,127 @@ h2 {
   }
 }
 
+/* projects */
+
+.projects {
+  padding-bottom: 10%;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+
+}
+
+.carousel {
+  grid-row: 1 / 2;
+  grid-column: 1 / 8;
+  width: 100vw;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  --middle: 3;
+  --position: 1;
+}
+
+.item {
+  position: absolute;
+  width: 300px;
+  padding-bottom: 1em;
+  background-color: var(--bg-color, #081c29);
+  --r: calc(var(--position) - var(--offset));
+  --abs: max(calc(var(--r) * -1), var(--r));
+  transition: all 0.25s linear;
+  transform: rotateY(calc(-10deg * var(--r)))
+    translateX(calc(-300px * var(--r)));
+  box-shadow: 1px 1px 11px 4px #0ef;
+  z-index: calc((var(--position) - var(--abs)));
+}
+
+.projects .carousel .card-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.projects .carousel .card-items-content {
+  padding: 16px;
+}
+
+.projects .carousel .card-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.projects .carousel .card-description {
+  margin-top: 8px;
+}
+
+.projects .carousel .card-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects .carousel .card-button {
+  display: inline;
+  padding: 12px 28px;
+  background: #0ef;
+  border-radius: 40px;
+  font-size: 16px;
+  color: #081b29;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.projects .carousel .card-button:hover {
+  background-color: #ddd;
+}
+
+.dots-container {
+  grid-column: 1 / 8;
+  text-align: center;
+}
+
+.dots-container input[type="radio"] + label {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #bbb;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dots-container input[type="radio"]:checked + label {
+  background-color: #333;
+}
+
 /* About */
 
 .about {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  padding-bottom: 20%;
+  padding-bottom: 10%;
 }
 
 .about_img {
   display: flex;
   align-items: center;
   justify-content: left;
+  padding-inline: 20px;
 }
 
 .about_img img {
@@ -425,7 +542,42 @@ h2 {
   margin-bottom: 4rem;
 }
 
-@media screen and (max-width: 600px) {
+/* footer */
+
+footer {
+  background-color: #03131c;
+  padding: 20px;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.footer-icons {
+  margin-bottom: 10px;
+}
+
+.footer-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #0ef;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #0ef;
+  text-decoration: none;
+  margin: 30px 15px 30px 0;
+}
+
+.footer-text {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 900px) {
   .mobile-icon {
     display: flex;
   }
@@ -433,6 +585,7 @@ h2 {
     display: none;
     flex-direction: column;
     height: 220px;
+    background-color: inherit;
   }
 
   .navbar a {
@@ -446,7 +599,7 @@ h2 {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   /* Home */
 
   .home .home-photo {
